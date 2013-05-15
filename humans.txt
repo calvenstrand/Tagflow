@@ -3,13 +3,14 @@
 
 # TEAM
 
-    <name> -- <role> -- <twitter>
+    Christoffer Älvenstrand 	-- 		CEO
+	Rasmus Lager 				-- 		CTO
 
-# THANKS
-
-    <name>
 
 # TECHNOLOGY COLOPHON
-
+	
+	Html5Boilerplate.com
     HTML5, CSS3
     Normalize.css, jQuery, Modernizr
+	Twitter
+	Instagram

@@ -96,7 +96,7 @@ textarea {
 
 
 .container {
-    border: 1px solid #333;
+
 }
 .header {
     height:80px;
@@ -106,6 +106,7 @@ textarea {
     background-image: linear-gradient(to bottom, rgb(255, 255, 255), rgb(242, 242, 242));
     background-repeat: repeat-x;
     box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.067);
+    border: 1px solid rgb(212, 212, 212);
 }
 .instaContainer {
     width: 60%;
@@ -138,8 +139,38 @@ textarea {
     padding: 10px;
     border-left: 2px solid #333;*/
 }
-
-
+.twitterPost {
+    width: 90%;
+    padding: 10px 0;
+    border-bottom: 1px solid #333;
+    float: left;
+}
+.twitterPost:last-child {
+    border-bottom: 0;
+}
+.twitterPicture {
+    float: left;
+}
+.twitterPicture img {
+    width: 50px;
+    height:50px;
+}
+.twitterCont {
+    float:left;
+    width: 88%;
+    margin-left: 5px;
+}
+.twitterName {
+    float:left;
+    margin: 0;
+}
+.twitterUsername {
+    float:left;
+    margin: 0 0 0 5px;
+}
+.tweet {
+    float: left;
+}
 
 
 

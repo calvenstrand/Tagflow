@@ -19,7 +19,7 @@
             <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
         <![endif]-->
 
-        <div class="instaWrap">
+        <div id="instafeed" class="instaWrap">
         	<div class="instaPic">
             	<img src="#" alt="instaimg">
             </div>
@@ -51,6 +51,14 @@
             g.src='//www.google-analytics.com/ga.js';
             s.parentNode.insertBefore(g,s)}(document,'script'));
         </script>
-        <script src="js/qwinstragrand.js"></script>
+        <!-- <script src="js/qwinstragrand.js"></script> -->
+        <script type="text/javascript">
+        var feed = new Instafeed({
+        get: 'tagged',
+        tagName: 'football',
+        clientId: 'bf5093520bb54d3cac22e936e98a3804'
+         });
+            feed.run();
+        </script>
     </body>
 </html>

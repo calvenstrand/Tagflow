@@ -142,11 +142,11 @@ textarea {
 .twitterPost {
     width: 90%;
     padding: 10px 0;
-    border-bottom: 1px solid #333;
+    border-top: 1px solid #999;
     float: left;
 }
 .twitterPost:last-child {
-    border-bottom: 0;
+    border-bottom: 1px solid #999;
 }
 .twitterPicture {
     float: left;
@@ -167,6 +167,7 @@ textarea {
 .twitterUsername {
     float:left;
     margin: 0 0 0 5px;
+    color: rgb(153, 153, 153);
 }
 .tweet {
     float: left;

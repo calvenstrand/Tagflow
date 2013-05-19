@@ -15,7 +15,7 @@
         <script src="js/libs/modernizr-2.6.2.min.js"></script>
     </head>
     <body>
-        <!--[if lt IE 7]>
+       <!--[if lt IE 7]>
             <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
         <![endif]-->
         <div class="container">
@@ -23,8 +23,8 @@
 
             </div>
 
-            <div class="instaContainer">
-                <div class="instaPost">
+            <div id="instafeed" class="instaContainer">
+                <!-- <div class="instaPost">
                     <div class="instaPicture">
                         <img src="img/testimg.jpg" alt="instaimg">
                     </div>
@@ -81,22 +81,15 @@
                     </div>
                     <p class="instaUser">asdnapinsd</p>
                 </div>
-
+            -->
             </div>
 
         
 <div class="twitterContainer">
-            <div class="twitterPost"> 
-                	<div class="twitterPicture">
-                    	<img src="img/testimg.jpg" alt="twitterpic">
-                    </div>
-                    <div class="twitterCont">
-                    	<p class="twitterName">asdpmasdnasdn</p><p class="twitterUsername">sdasdasd</p>
-                        <p class="tweet">Sed et erat nulla, et sollicitudin enim. Cras porta turpis eget orci mattis et suscipit risus tristique. Mauris sodales odio id nisl fringilla rhoncus. Donec tincidunt ante a sapien mollis ornare. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Ut vel nunc et est tincidunt mollis. Proin rutrum suscipit neque eu ornare. Vestibulum faucibus lectus non neque posuere vel tempor tortor dapibus. </p>
-                    </div>
-                </div>
+    <a class="twitter-timeline" href="https://twitter.com/search?q=%23lovemoore" data-widget-id="336097078751162368">Tweets om "#lovemoore"</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
 
-                <div class="twitterPost">
+            <!-- <div class="twitterPost"> 
                     <div class="twitterPicture">
                         <img src="img/testimg.jpg" alt="twitterpic">
                     </div>
@@ -124,6 +117,17 @@
                         <p class="twitterName">asdpmasdnasdn</p><p class="twitterUsername">sdasdasd</p>
                         <p class="tweet">Sed et erat nulla, et sollicitudin enim. Cras porta turpis eget orci mattis et suscipit risus tristique. Mauris sodales odio id nisl fringilla rhoncus. Donec tincidunt ante a sapien mollis ornare. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Ut vel nunc et est tincidunt mollis. Proin rutrum suscipit neque eu ornare. Vestibulum faucibus lectus non neque posuere vel tempor tortor dapibus. </p>
                     </div>
+                </div>
+
+                <div class="twitterPost">
+                    <div class="twitterPicture">
+                        <img src="img/testimg.jpg" alt="twitterpic">
+                    </div>
+                    <div class="twitterCont">
+                        <p class="twitterName">asdpmasdnasdn</p><p class="twitterUsername">sdasdasd</p>
+                        <p class="tweet">Sed et erat nulla, et sollicitudin enim. Cras porta turpis eget orci mattis et suscipit risus tristique. Mauris sodales odio id nisl fringilla rhoncus. Donec tincidunt ante a sapien mollis ornare. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Ut vel nunc et est tincidunt mollis. Proin rutrum suscipit neque eu ornare. Vestibulum faucibus lectus non neque posuere vel tempor tortor dapibus. </p>
+                    </div>
+                -->
                 </div>
                 
             </div>
@@ -138,7 +142,8 @@
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
         <script src="js/plugins.js"></script>
         <script src="js/main.js"></script>
-
+        <script src="js/libs/instafeed.js"></script>
+        <script src="js/rasmus.js"></script>
         <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
         <script>
             var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];

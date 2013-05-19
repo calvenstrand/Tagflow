@@ -27,7 +27,7 @@
         </div>
 
 
-		<div class="twitterWrap">
+		<div id="twitterWrap" class="twitterWrap">
         	<div class="twitterPic">
             	<img src="#" alt="twitterpic">
             </div>
@@ -43,6 +43,7 @@
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
         <script src="js/plugins.js"></script>
         <script src="js/main.js"></script>
+        <script src="js/qwinstragrand.js"></script>
 
         <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
         <script>
@@ -53,12 +54,28 @@
         </script>
         <!-- <script src="js/qwinstragrand.js"></script> -->
         <script type="text/javascript">
-        var feed = new Instafeed({
+        function instaGetter(params){
+        array_of_tags = params.split(', ');
+        var name_of_tag;
+        for (var i = 0; i < array_of_tags.length; i++){
+        name_of_tag = array_of_tags[i];
+        $('#instafeed').append('<div id="'+name_of_tag+'"></div>')
+        var  feed = new Instafeed({
+        target: name_of_tag,
         get: 'tagged',
-        tagName: 'football',
-        clientId: 'bf5093520bb54d3cac22e936e98a3804'
+        tagName: name_of_tag,
+        clientId: 'bf5093520bb54d3cac22e936e98a3804',
+        limit: 60
          });
             feed.run();
+
+            console.log(array_of_tags[i]);
+        }
+        }
+        instaGetter('fun, lol, hey');
+
+
+        
         </script>
     </body>
 </html>

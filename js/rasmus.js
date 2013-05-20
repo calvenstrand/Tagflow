@@ -5,12 +5,11 @@
 //NOW ONLY OPTIMIZED FOR 1 TAG
 
 function instaGetter(params){
-
+	$("#choosenHash").html('#' + params);
 	array_of_tags = params.split(', ');
 	var name_of_tag;
 	var currentOBJ = '';
-	var doFeed = true;
-	
+	var doFeed = true;	
 
 	for (var i = 0; i < array_of_tags.length; i++){
 		//The tagname to use
@@ -19,8 +18,7 @@ function instaGetter(params){
 			$('#instafeed').append('<div id="'+name_of_tag+'"></div>');
 		}
 		
-		var feed = new Instafeed({
-			
+		var feed = new Instafeed({	
 			target: name_of_tag,
 			get: 'tagged',
 			tagName: name_of_tag,
@@ -49,10 +47,7 @@ function instaGetter(params){
 					}
 				}
 				/////////
-
-
 			}
-
 		});
 
 	feed.run();
@@ -66,21 +61,13 @@ function instaGetter(params){
 			feed.mock = false;
 			feed.run();
 			console.log('should not put imgs');
-		}
-			
+		}			
 		
 	},10000)
 
-	}
-
-
-
-
-
-
-
-	
+	}	
 }
 
 //This is the caller of the function!! put in the tag u want to use!!
 instaGetter('lovemoore');
+

@@ -21,7 +21,7 @@ textarea {
 body {
     font-size: 1em;
     line-height: 1.4;
-    overflow-x:hidden;
+    overflow:hidden;
 }
 
 /*
@@ -107,6 +107,29 @@ textarea {
     background-repeat: repeat-x;
     box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.067);
     border: 1px solid rgb(212, 212, 212);
+	display:table;
+}
+#choosenHash {
+	text-align:center;
+	font-size: 50px;
+	margin:5px;
+	display:block;	
+}
+#l-logo { 
+	float:left;
+	display:block;
+	margin:10px 10px 10px 20px;
+	width: 300px;
+	height:55px;
+	background-repeat:no-repeat;
+}
+#r-logo {
+	float:right;
+	display:block;
+	margin:10px 20px 10px 10px;
+	width: 300px;
+	height:55px;
+	background-repeat:no-repeat;
 }
 .instaContainer {
     width: 60%;
@@ -132,12 +155,17 @@ textarea {
     text-align: center;
     margin:5px;
 }
+.instaUser a {
+	color: #333;
+	text-decoration: none;
+	font-weight:bold;
+}
 .twitterContainer {
     width: 38.4%;
     height: 100%;
     float: right;
     padding: 10px;
-    border-left: 2px solid #333;*/
+    border-left: 2px solid #d4d4d4;*/
 }
 .twitterPost {
     width: 90%;
@@ -157,7 +185,7 @@ textarea {
 }
 .twitterCont {
     float:left;
-    width: 88%;
+    width: 95%;
     margin-left: 5px;
 }
 .twitterName {
@@ -172,11 +200,18 @@ textarea {
 .tweet {
     float: left;
 }
+#twitter-widget-0 {
+	width:100% !important;
+	height:1000px !important;
+}
+.timeline .stream {
+	height:900px !important;
+	overflow: visible !important;
+}
 
-
-
-
-
+.timeline-footer {
+	display:hidden !important;
+}
 
 
 

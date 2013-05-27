@@ -63,10 +63,10 @@ function instaGetter(params){
 			console.log('should not put imgs');
 		}			
 		
-	},10000)
+	},1000)
 
 	}	
 }
 
 //This is the caller of the function!! put in the tag u want to use!!
-instaGetter('lovemoore');
+instaGetter('lovem');

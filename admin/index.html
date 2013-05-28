@@ -16,14 +16,69 @@
 </head>
 <body>
 	<style>
-		.well {
-			position:absolute;
-			top:20%;
-			box-shadow: 0;
-			border: 1px solid #999;
-		}
+        .logo {
+            width: 80%;
+            height: auto;
+            margin: 20px auto;
+        }
+        .logo img {
+            width: 100%;
+        }
+        input {
+            width: 95% !important;
+        }
 	</style>
     
+    <div id="wrap">
+    <div class="container">
+        <div class="row">
+            <div class="span3 hidden-phone"></div>
+            <div class="span6" id="form-login">
+<div class="logo"><img src="img/philips.png" alt="moore"></div>
+                    <fieldset>
+                        
+                        <legend>Login Form</legend>
+                        <div class="alert alert-error">
+                            <a class="close" data-dismiss="alert" href="#">×</a>Incorrect Username or Password!
+                        </div>
+                        <div class="control-group">
+                            <div class="control-label">
+                                <label>Username</label>
+                            </div>
+                            <div class="controls">
+                                <input type="text" placeholder="john.doe@youremail.com" class="input-large">
+                            </div>
+                        </div>
+
+                        <div class="control-group">
+                            <div class="control-label">
+                                <label>Password</label>
+                            </div>
+                            <div class="controls">
+                                <input type="password" placeholder="type your password" class="input-large">
+
+                                <!-- Help-block example -->
+                                <!-- <span class="help-block">Example block-level help text here.</span> -->
+                            </div>
+                        </div>
+
+                        <div class="control-group">
+                            <div class="controls">
+
+                            <button type="submit" id="submit" class="btn btn-large btn-primary button-loading" data-loading-text="Loading...">Sign in</button>
+
+                            <button type="button" class="btn btn-large btn-secondary button-loading" data-loading-text="Loading...">Forgot Password</button>
+
+                            </div>
+                        </div>
+                    </fieldset>
+
+            </div>
+            <div class="span3 hidden-phone"></div>
+        </div>
+    </div>
+
+    <!--
     <div class="container">
         <div class="row">
             <div class="span4 offset4 well">
@@ -42,6 +97,7 @@
             </div>
         </div>
     </div>
+    -->
 
     <!-- JS -->
 	<script src="../js/libs/jquery-1.9.1.min.js"></script>

@@ -61,6 +61,7 @@ textarea {  resize: vertical; }
 	margin:5px;
 	display:block;	
 	font-family: 'Finger Paint', cursive;
+	cursor:default;
 }
 #l-logo { 
 	float:left;

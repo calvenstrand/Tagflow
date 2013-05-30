@@ -63,7 +63,7 @@ function instaGetter(params){
 			console.log('should not put imgs');
 		}			
 		
-	},10000)
+	},6000)
 
 	}	
 }

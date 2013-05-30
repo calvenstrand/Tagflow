@@ -80,125 +80,38 @@ textarea {  resize: vertical; }
 }
 
 /* Instagram =============== */
-#instafeed {
-    margin: 2px 0 0 0;
-    padding: 0;
-    list-style: none;
-    position: relative;
+.instaContainer {
     width: 100%;
-    float:left;
+    padding: 5px 0;
+    height: auto;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
 }
- 
-#instafeed li {
-    position: relative;
+.instaPost {
+    width:220px;
     float: left;
-    overflow: hidden;
-    width: 16.6666667%; /* Fallback */
-    width: -webkit-calc(100% / 6);
-    width: calc(100% / 6);
+    border: 1px solid #999;
+    padding:1px;
+    margin:1px;
+	display: inline-block;
 }
-#instafeed .instaPost {
-    border: 1px solid #ccc;
-    margin: 1px;
-    padding: 1px;
-}
- 
-#instafeed li a,
-#instafeed li a img {
-    display: block;
-    width: 100%;
-    cursor: pointer;
-    text-align: center;
-    text-decoration: none;
-    color: #333;
-    font-weight: bold;
-}
- 
-#instafeed li a img {
-    max-width: 100%;
-}
- 
-/* Flexbox is used for centering the heading */
-#instafeed li a div {
-    position: absolute;
-    left: 20px;
-    top: 20px;
-    right: 20px;
-    bottom: 20px;
-    background: rgba(71,163,218,0.2);
-    display: -webkit-flex;
-    display: -moz-flex;
-    display: -ms-flex;
-    display: flex;
-    -webkit-align-items: center;
-    -moz-align-items: center;
-    -ms-align-items: center;
-    align-items: center;
-    text-align: center;
-    opacity: 0;
-}
- 
-#instafeed li a:hover div {
-    opacity: 1;
-}
- 
-#instafeed li a div h3 {
-    width: 100%;
-    color: #fff;
-    text-transform: uppercase;
-    font-size: 1.4em;
-    letter-spacing: 2px;
-    padding: 0 10px;
-}
- 
-/* Example for media query: change number of items per row */
- 
-@media screen and (max-width: 1190px) {
-    #instafeed li {
-        width: 20%; /* Fallback */
-        width: -webkit-calc(100% / 5);
-        width: calc(100% / 5);
-    }
-}
- 
-@media screen and (max-width: 945px) {
-    #instafeed li {
-        width: 25%; /* Fallback */
-        width: -webkit-calc(100% / 4);
-        width: calc(100% / 4);
-    }
-}
- 
-@media screen and (max-width: 660px) {
-    #instafeed li {
-        width: 33.3333333%; /* Fallback */
-        width: -webkit-calc(100% / 3);
-        width: calc(100% / 3);
-    }
-}
- 
-@media screen and (max-width: 660px) {
-    #instafeed li {
-        width: 33.3333333%; /* Fallback */
-        width: -webkit-calc(100% / 3);
-        width: calc(100% / 3);
-    }
-}
- 
-@media screen and (max-width: 400px) {
-    #instafeed li {
-        width: 50%; /* Fallback */
-        width: -webkit-calc(100% / 2);
-        width: calc(100% / 2);
-    }
-}
- 
-@media screen and (max-width: 300px) {
-    #instafeed li {
-        width: 100%;
-    }
-}
+.instaPicture {
 
+}
+.instaPicture img {
+    width: 100%;
+}
+.instaUser {
+    text-align: center;
+    margin:5px;
+	overflow:hidden;
+}
+.instaUser a {
+	color: #333;
+	text-decoration: none;
+	font-weight:bold;
+}
 
 /* Twitter =============== */
 .twitterContainer {
@@ -255,6 +168,77 @@ textarea {  resize: vertical; }
 	display:hidden !important;
 }
  
+/*====  Media Queries =========================================== */
+/* Smartphones  =============== */
+@media only screen and (max-width : 320px) {
+	.instaContainer {  }
+	.instaPost { width:48%; }
+	#r-logo { width:0; height:0; }
+	#l-logo { width:0; height:0; }
+	.header { height:20px; }
+	#choosenHash { font-size: 16px; }
+}
+ 
+/* iPads (portrait and landscape) =============== */
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) {
+	.instaContainer { width: 768px; }
+	.instaPost { width:16%; }
+	#r-logo { width:0; height:0; }
+	#l-logo { width:0; height:0; }
+}
+ 
+/* iPads (landscape) =============== */
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : landscape) {
+	.instaContainer { width: 768px; }
+	.instaPost { width:19.2%; }
+	#r-logo { width:0; height:0; }
+	#l-logo { width:0; height:0; }
+	.header { height:40px; }
+	#choosenHash { font-size: 32px; }
+}
+ 
+/* iPads (portrait) =============== */
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : portrait) {
+	.instaContainer { width: 768px; }
+	.instaPost { width:24.2%; }
+	#r-logo { width:0; height:0; }
+	#l-logo { width:0; height:0; }
+	.header { height:40px; }
+	#choosenHash { font-size: 32px; }
+}
+ 
+/* Desktops and laptops =============== */
+@media only screen and (min-width : 980px) {
+	.instaContainer { width: 980px; }
+	.instaPost { width:16%; }
+}
+@media only screen and (min-width : 1200px) {
+	.instaContainer { width: 1200px; }
+	.instaPost { width:16.1%; }
+}
+@media only screen and (min-width : 1400px) {
+	.instaContainer { width: 1400px; }
+	.instaPost { width:16.22%; }
+}
+@media only screen and (min-width : 1600px) {
+	.instaContainer { width: 1600px; margin-left: 5px; }
+	.instaPost { width:16%; }
+}
+@media only screen and (min-width : 1880px) {
+	.instaContainer { width: 1880px; }
+	.instaPost { width:16.2%; }
+}
+ 
+/* iPhone 4 =============== */
+@mediaonly screen and (-webkit-min-device-pixel-ratio : 1.5), only screen and (min-device-pixel-ratio : 1.5) {
+	.instaContainer {  }
+	.instaPost { width:48%; }
+	#r-logo { width:0; height:0; }
+	#l-logo { width:0; height:0; }
+	.header { height:20px; }
+	#choosenHash { font-size: 16px; }
+}
+
 /*====  Helper classes =========================================== */
 .ir {
     background-color: transparent;

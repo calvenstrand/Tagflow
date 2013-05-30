@@ -24,7 +24,7 @@ function instaGetter(params){
 			tagName: name_of_tag,
 			clientId: 'bf5093520bb54d3cac22e936e98a3804',
 			limit: 60,
-			template: '<div class="instaPost"><div class="instaPicture"><a href="{{link}}"><img src="{{image}}" alt="instaimg"></a></div><p class="instaUser"><a href="{{link}}">{{model.user.username}}</a></p></div>',
+			template: '<li><div class="instaPost"><a href="{{link}}"><img src="{{image}}" alt="instaimg"></a><p class="instaUser"><a href="{{link}}">{{model.user.username}}</a></p></div></li>',
 			success: function(data){
 			
 				
@@ -63,10 +63,10 @@ function instaGetter(params){
 			console.log('should not put imgs');
 		}			
 		
-	},1000)
+	},10000)
 
 	}	
 }
 
 //This is the caller of the function!! put in the tag u want to use!!
-instaGetter('lovem');
+instaGetter('lovemoore');

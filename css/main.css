@@ -102,7 +102,7 @@ textarea {  resize: vertical; }
     margin: 1px;
     padding: 1px;
 }
- 
+.instaUser { overflow: hidden; }
 #instafeed li a,
 #instafeed li a img {
     display: block;
@@ -138,21 +138,7 @@ textarea {  resize: vertical; }
     opacity: 0;
 }
  
-#instafeed li a:hover div {
-    opacity: 1;
-}
- 
-#instafeed li a div h3 {
-    width: 100%;
-    color: #fff;
-    text-transform: uppercase;
-    font-size: 1.4em;
-    letter-spacing: 2px;
-    padding: 0 10px;
-}
- 
 /* Example for media query: change number of items per row */
- 
 @media screen and (max-width: 1190px) {
     #instafeed li {
         width: 20%; /* Fallback */
@@ -183,6 +169,9 @@ textarea {  resize: vertical; }
         width: -webkit-calc(100% / 3);
         width: calc(100% / 3);
     }
+    .instaUser {
+        font-size: 12px;
+    }
 }
  
 @media screen and (max-width: 400px) {
@@ -191,11 +180,17 @@ textarea {  resize: vertical; }
         width: -webkit-calc(100% / 2);
         width: calc(100% / 2);
     }
+    .instaUser {
+        font-size: 12px;
+    }
 }
  
 @media screen and (max-width: 300px) {
     #instafeed li {
         width: 100%;
+    }
+    .instaUser {
+        font-size: 14px;
     }
 }
 

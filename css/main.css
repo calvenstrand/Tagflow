@@ -47,7 +47,7 @@ textarea {  resize: vertical; }
 	
 }
 .header {
-    height:80px;
+    height:auto;
     width: 100%;
     top:0;
     background:#F5F6F7;
@@ -57,7 +57,7 @@ textarea {  resize: vertical; }
 }
 #choosenHash {
 	text-align:center;
-	font-size: 50px;
+	font-size: 40px;
 	margin:5px;
 	display:block;	
 	font-family: 'Finger Paint', cursive;
@@ -103,7 +103,7 @@ textarea {  resize: vertical; }
     margin: 1px;
     padding: 1px;
 }
-.instaUser { overflow: hidden; }
+.instaUser { overflow: hidden; margin: 5px; }
 #instafeed li a,
 #instafeed li a img {
     display: block;

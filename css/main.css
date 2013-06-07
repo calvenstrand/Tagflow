@@ -16,7 +16,7 @@ textarea {
     color: #222;
 }
 html, body { width:100%; height:100%; overflow-x:hidden; }
-body { font-size: 1em; line-height: 1.4; }
+body { font-size: 1em; line-height: 1.4; background: url(../img/bg.jpg);}
 
 ::-moz-selection { background: #b3d4fc; text-shadow: none; }
 ::selection { background: #b3d4fc; text-shadow: none; }
@@ -46,13 +46,25 @@ textarea {  resize: vertical; }
 .container {
 	
 }
+#stickymenu {
+    width: 100%;
+    height: 80px;
+    background-color: rgba(30, 30, 30, 0.97);
+    border-bottom: 1px solid rgb(165, 128, 68);
+    z-index: 2;
+    position: fixed;
+    font-family: "futura-pt";
+    color: rgb(208, 208, 208);
+    padding-top: 15px;
+    min-width: 845px !important;
+}
+
 .header {
     height:auto;
     width: 100%;
     top:0;
-    background:#F5F6F7;
-    box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.25);
-    border: 1px solid rgb(212, 212, 212);
+    background-color: rgba(30, 30, 30, 0.97);
+    border-bottom: 1px solid rgb(165, 128, 68);
 	position: fixed;
     z-index: 10;
 }
@@ -61,8 +73,9 @@ textarea {  resize: vertical; }
 	font-size: 40px;
 	margin:5px;
 	display:block;	
-	font-family: 'Finger Paint', cursive;
+	font-family: 'Alef', sans-serif;
 	cursor:default;
+    color: rgb(208, 208, 208);
 }
 #l-logo { 
 	float:left;
@@ -83,7 +96,7 @@ textarea {  resize: vertical; }
 
 /* Instagram =============== */
 #instafeed {
-    margin: 2px 0 0 0;
+    margin: -4px 0 0 0;
     padding: 0;
     list-style: none;
     position: relative;
@@ -101,11 +114,27 @@ textarea {  resize: vertical; }
     width: calc(100% / 6);
 }
 #instafeed .instaPost {
-    border: 1px solid rgb(212, 212, 212);
-    margin: 1px;
-    padding: 1px;
+    border-bottom: 1px solid rgb(33, 33, 33);
+    border-right: 1px solid rgb(33, 33, 33);
 }
-.instaUser { overflow: hidden; margin: 5px; }
+#instaUser-container {
+    width: 100%;
+    z-index: 1;
+    position: absolute;
+    bottom: -12px;
+    left: 0px;
+}
+.instaUser { 
+    display: block;
+    padding: 0.8em 1em;
+    background: none repeat scroll 0% 0% rgba(0, 0, 0, 0.3);
+    font-size: 12px;
+    text-transform: uppercase;
+    line-height: 1.2em;
+    color: rgb(255, 255, 255);
+    border-top: 1px solid rgba(0, 0, 0, 0.3);
+}
+
 #instafeed li a,
 #instafeed li a img {
     display: block;
@@ -113,8 +142,7 @@ textarea {  resize: vertical; }
     cursor: pointer;
     text-align: center;
     text-decoration: none;
-    color: #333;
-    font-weight: bold;
+    color: rgb(255, 255, 255);
 }
  
 #instafeed li a img {

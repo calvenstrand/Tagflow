@@ -15,8 +15,8 @@ select,
 textarea {
     color: #222;
 }
-html, body { width:100%; height:100%; overflow-x:hidden; }
-body { font-size: 1em; line-height: 1.4; background: url(../img/bg.jpg);}
+html, body { width:100%; height:100%; background: url(../img/bg.jpg);}
+body { font-size: 1em; line-height: 1.4; }
 
 ::-moz-selection { background: #b3d4fc; text-shadow: none; }
 ::selection { background: #b3d4fc; text-shadow: none; }
@@ -46,19 +46,6 @@ textarea {  resize: vertical; }
 .container {
 	
 }
-#stickymenu {
-    width: 100%;
-    height: 80px;
-    background-color: rgba(30, 30, 30, 0.97);
-    border-bottom: 1px solid rgb(165, 128, 68);
-    z-index: 2;
-    position: fixed;
-    font-family: "futura-pt";
-    color: rgb(208, 208, 208);
-    padding-top: 15px;
-    min-width: 845px !important;
-}
-
 .header {
     height:auto;
     width: 100%;
@@ -215,7 +202,6 @@ textarea {  resize: vertical; }
         font-size: 12px;
     }
 }
- 
 @media screen and (max-width: 300px) {
     #instafeed li {
         width: 100%;
@@ -225,6 +211,25 @@ textarea {  resize: vertical; }
     }
 }
 
+
+/* iPads (landscape) ----------- */
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : landscape) {
+	#instafeed li {
+        width: 25%; /* Fallback */
+        width: -webkit-calc(100% / 4);
+        width: calc(100% / 4);
+    }
+}
+
+/* iPads (portrait) ----------- */
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : portrait) {
+	#instafeed li {
+        width: 33.3333333%; /* Fallback */
+        width: -webkit-calc(100% / 3);
+        width: calc(100% / 3);
+    }
+}
+ 
 
 /* Twitter =============== */
 .twitterContainer {

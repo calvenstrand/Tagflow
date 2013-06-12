@@ -69,4 +69,4 @@ function instaGetter(params){
 }
 
 //This is the caller of the function!! put in the tag u want to use!!
-instaGetter('lovemoore');
+instaGetter('batman');

@@ -1,51 +1,17 @@
-/*
- * HTML5 Boilerplate
- *
- * What follows is the result of much research on cross-browser styling.
- * Credit left inline and big thanks to Nicolas Gallagher, Jonathan Neal,
- * Kroc Camen, and the H5BP dev community and team.
- */
-
-
-/*====  Base styles: opinionated defaults =========================================== */
-html,
-button,
-input,
-select,
-textarea {
-    color: #222;
-}
-html, body { width:100%; height:100%; background: url(../img/bg.jpg);}
+html, button, input, select, textarea { color: #222; }
+html, body { width:100%; height:100%; background: url(../img/bg-arrow.jpg);}
 body { font-size: 1em; line-height: 1.4; }
 
 ::-moz-selection { background: #b3d4fc; text-shadow: none; }
 ::selection { background: #b3d4fc; text-shadow: none; }
 
-hr {
-    display: block;
-    height: 1px;
-    border: 0;
-    border-top: 1px solid #ccc;
-    margin: 1em 0;
-    padding: 0;
-}
-
+hr { display: block; height: 1px; border: 0; border-top: 1px solid #ccc; margin: 1em 0; padding: 0; }
 img { vertical-align: middle; }
 fieldset { border: 0; margin: 0; padding: 0; }
 textarea {  resize: vertical; }
 
-/*====  Chrome Frame prompt =========================================== */
-.chromeframe {
-    margin: 0.2em 0;
-    background: #ccc;
-    color: #000;
-    padding: 0.2em 0;
-}
-
-/*====  Author's custom styles =========================================== */
-.container {
-	
-}
+/*====  Header styles =========================================== */
+.container { }
 .header {
     height:auto;
     width: 100%;
@@ -91,7 +57,6 @@ textarea {  resize: vertical; }
     float:left;
     top:70px;
 }
- 
 #instafeed li {
     position: relative;
     float: left;
@@ -121,7 +86,6 @@ textarea {  resize: vertical; }
     color: rgb(255, 255, 255);
     border-top: 1px solid rgba(0, 0, 0, 0.3);
 }
-
 #instafeed li a,
 #instafeed li a img {
     display: block;
@@ -131,12 +95,9 @@ textarea {  resize: vertical; }
     text-decoration: none;
     color: rgb(255, 255, 255);
 }
- 
 #instafeed li a img {
     max-width: 100%;
 }
- 
-/* Flexbox is used for centering the heading */
 #instafeed li a div {
     position: absolute;
     left: 20px;
@@ -155,8 +116,6 @@ textarea {  resize: vertical; }
     text-align: center;
     opacity: 0;
 }
- 
-/* Example for media query: change number of items per row */
 @media screen and (max-width: 1190px) {
     #instafeed li {
         width: 20%; /* Fallback */
@@ -164,7 +123,6 @@ textarea {  resize: vertical; }
         width: calc(100% / 5);
     }
 }
- 
 @media screen and (max-width: 945px) {
     #instafeed li {
         width: 25%; /* Fallback */
@@ -172,7 +130,6 @@ textarea {  resize: vertical; }
         width: calc(100% / 4);
     }
 }
- 
 @media screen and (max-width: 660px) {
     #instafeed li {
         width: 33.3333333%; /* Fallback */
@@ -180,7 +137,6 @@ textarea {  resize: vertical; }
         width: calc(100% / 3);
     }
 }
- 
 @media screen and (max-width: 660px) {
     #instafeed li {
         width: 33.3333333%; /* Fallback */
@@ -191,7 +147,6 @@ textarea {  resize: vertical; }
         font-size: 12px;
     }
 }
- 
 @media screen and (max-width: 400px) {
     #instafeed li {
         width: 50%; /* Fallback */
@@ -210,7 +165,6 @@ textarea {  resize: vertical; }
         font-size: 14px;
     }
 }
-
 
 /* iPads (landscape) ----------- */
 @media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : landscape) {
@@ -287,57 +241,16 @@ textarea {  resize: vertical; }
 }
  
 /*====  Helper classes =========================================== */
-.ir {
-    background-color: transparent;
-    border: 0;
-    overflow: hidden;
-    /* IE 6/7 fallback */
-    *text-indent: -9999px;
-}
-.ir:before {
-    content: "";
-    display: block;
-    width: 0;
-    height: 150%;
-}
-.hidden {
-    display: none !important;
-    visibility: hidden;
-}
-.visuallyhidden {
-    border: 0;
-    clip: rect(0 0 0 0);
-    height: 1px;
-    margin: -1px;
-    overflow: hidden;
-    padding: 0;
-    position: absolute;
-    width: 1px;
-}
+.ir { background-color: transparent; border: 0; overflow: hidden; *text-indent: -9999px; }
+.ir:before { content: ""; display: block; width: 0; height: 150%; }
+.hidden { display: none !important; visibility: hidden; }
+.visuallyhidden { border: 0; clip: rect(0 0 0 0); height: 1px; margin: -1px; overflow: hidden; padding: 0; position: absolute; width: 1px; }
 .visuallyhidden.focusable:active,
-.visuallyhidden.focusable:focus {
-    clip: auto;
-    height: auto;
-    margin: 0;
-    overflow: visible;
-    position: static;
-    width: auto;
-}
-.invisible {
-    visibility: hidden;
-}
-
-.clearfix:before,
-.clearfix:after {
-    content: " "; /* 1 */
-    display: table; /* 2 */
-}
-.clearfix:after {
-    clear: both;
-}
-.clearfix {
-    *zoom: 1;
-}
+.visuallyhidden.focusable:focus { clip: auto; height: auto; margin: 0; overflow: visible; position: static; width: auto; }
+.invisible { visibility: hidden; }
+.clearfix:before, .clearfix:after { content: " "; display: table; }
+.clearfix:after { clear: both; }
+.clearfix { *zoom: 1; }
 
 /*====  Print styles =========================================== */
 @media print {

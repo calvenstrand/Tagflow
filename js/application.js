@@ -8,8 +8,9 @@ Moustagram = {
   collections: {},
   views: {}
 };
-
+var leIntervalStarted = false;
 var currentCollection;
+
 Moustagram.config = {
   clientId: "bf5093520bb54d3cac22e936e98a3804",
   feedUrl: "https://api.instagram.com/v1/users/self/media/recent?access_token=",
@@ -85,39 +86,41 @@ Moustagram.views.PhotoView = Backbone.View.extend({
   },
 
   render: function() {
-    console.log(this.model);
+    //console.log(this.model);
     console.log('PhotoView rendering');
     username = this.model.get('user').username;
     link = this.model.get('link');
-    
     img = new Image();
-    img.src = this.model.get('images').standard_resolution.url;
+    img.src = this.model.get('images').low_resolution.url;
     this.$el.append('<div class="instaPost"></div>');
     this.$el.children('.instaPost').append('<span id="instaUser-container"><p class="instaUser"><a href="'+link+'">'+username+'</a></p></span>');
     this.$el.children('.instaPost').append('<a class="imgLink" href="'+link+'"></a>');
     this.$el.find('.imgLink').append(img);
-    //.append(img);
+
     return this;
   }
 });
 
 
 Moustagram.views.PhotosView = Backbone.View.extend({
-
   id: "instafeed",
   template: "#moustagram",
 
   initialize: function() {
+    
     console.log('PhotosView initialized');
     var view = this;
-    
     currentCollection = this.collection;
     currentCollection.bind('add', this.renderSingle, this);
     currentCollection.fetch({
+      data: {limit:4},
       add:true, 
       dataType : 'jsonp',
       success: function(collection, response) {
+
         console.log('completed fetch');
+        //console.log(currentCollection.models.length);
+
         //view.render();
       },
       error: function(collection, response) {
@@ -126,16 +129,14 @@ Moustagram.views.PhotosView = Backbone.View.extend({
     });
     
    setInterval(function(){
+      leIntervalStarted = true;
       console.log('starting fetch');
       currentCollection.fetch({
-        
       remove:false,
-     
       limit:40,      
       dataType : 'jsonp',
       success: function(collection, response) {
         console.log('completed fetch');
-
         //view.render();
       },
       error: function(collection, response) {
@@ -158,11 +159,13 @@ Moustagram.views.PhotosView = Backbone.View.extend({
     return this;
   },
   renderSingle: function(photo) {
-    
     view = this;
-      var photoView = new Moustagram.views.PhotoView({ model: photo });
-      view.$el.prepend(photoView.render().el);
-      //$('#photo_container').prepend(photoView.render().el);
+    var photoView = new Moustagram.views.PhotoView({ model: photo });
+    if(!leIntervalStarted){
+      view.$el.append(photoView.render().el);
+    }else{
+    view.$el.prepend(photoView.render().el);
+    }
     return this;
   }
 });
@@ -209,23 +212,21 @@ jQuery(function($) {
  
   var Moustagrammer = {
 
-    
-
   initialize: function() {
       console.log('tja');
     },
+
   run: function() {
      $("#choosenHash").html('#' + Moustagram.config.tag);
       var photos = new Moustagram.collections.Photos();
-      photos.url = 'https://api.instagram.com/v1/tags/'+Moustagram.config.tag+'/media/recent/?client_id=' + Moustagram.config.clientId;
+      photos.url = 'https://api.instagram.com/v1/tags/'+Moustagram.config.tag+'/media/recent/?client_id=' + Moustagram.config.clientId+'&count=23';
       //photos.url = 'https://api.instagram.com/v1/tags/batman/media/recent/?access_token=' + Moustagram.storage.getAccessToken();
       var view = new Moustagram.views.PhotosView({ collection: photos });
       $("#moustagram").html(view.el);
     }
 
   };
-
+  //Run this motha
   Moustagrammer.run();
 
- 
 });

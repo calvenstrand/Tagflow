@@ -10,6 +10,8 @@ Moustagram = {
 };
 var leIntervalStarted = false;
 var currentCollection;
+var MODE;
+
 
 Moustagram.config = {
   clientId: "bf5093520bb54d3cac22e936e98a3804",
@@ -55,7 +57,7 @@ Moustagram.storage = {
 
 Moustagram.models.Photo = Backbone.Model.extend({
   initialize: function() {
-    console.log('Photo initialized');
+    //console.log('Photo initialized');
   },
 });
 
@@ -82,12 +84,12 @@ Moustagram.views.PhotoView = Backbone.View.extend({
   className: "",
 
   initialize: function() {
-    console.log('PhotoView initialized');
+    //console.log('PhotoView initialized');
   },
 
   render: function() {
     //console.log(this.model);
-    console.log('PhotoView rendering');
+    //console.log('PhotoView rendering');
     username = this.model.get('user').username;
     link = this.model.get('link');
     img = new Image();
@@ -112,6 +114,7 @@ Moustagram.views.PhotosView = Backbone.View.extend({
     var view = this;
     currentCollection = this.collection;
     currentCollection.bind('add', this.renderSingle, this);
+
     currentCollection.fetch({
       data: {limit:4},
       add:true, 
@@ -128,6 +131,7 @@ Moustagram.views.PhotosView = Backbone.View.extend({
       }
     });
     
+    if(MODE == 'tvMode'){
    setInterval(function(){
       leIntervalStarted = true;
       console.log('starting fetch');
@@ -145,8 +149,10 @@ Moustagram.views.PhotosView = Backbone.View.extend({
     });
     //end of interval
     },7000);
+   }
    
   },
+
   //Not used atm render single instead of just render
   render: function() {
     console.log('PhotosView rendering');
@@ -169,8 +175,7 @@ Moustagram.views.PhotosView = Backbone.View.extend({
     return this;
   }
 });
-
-
+//////////////////////////////////////////////////////////////////////////////
 
 
 Moustagram.views.AuthorizeView = Backbone.View.extend({
@@ -215,18 +220,30 @@ jQuery(function($) {
   initialize: function() {
       console.log('tja');
     },
-
-  run: function() {
+    //Run the script and put in which tag to show photos from.
+  tvMode: function(tag) {
+    MODE = 'tvMode';
+      Moustagram.config.tag = tag;
      $("#choosenHash").html('#' + Moustagram.config.tag);
       var photos = new Moustagram.collections.Photos();
       photos.url = 'https://api.instagram.com/v1/tags/'+Moustagram.config.tag+'/media/recent/?client_id=' + Moustagram.config.clientId+'&count=23';
       //photos.url = 'https://api.instagram.com/v1/tags/batman/media/recent/?access_token=' + Moustagram.storage.getAccessToken();
       var view = new Moustagram.views.PhotosView({ collection: photos });
       $("#moustagram").html(view.el);
+    },
+    infiniteMode: function(tag) {
+      MODE = 'infiniteMode';
+      Moustagram.config.tag = tag;
+     $("#choosenHash").html('#' + Moustagram.config.tag);
+      var photos = new Moustagram.collections.Photos();
+      photos.url = 'https://api.instagram.com/v1/tags/'+Moustagram.config.tag+'/media/recent/?client_id=' + Moustagram.config.clientId+'&count=23';
+      //photos.url = 'https://api.instagram.com/v1/tags/batman/media/recent/?access_token=' + Moustagram.storage.getAccessToken();
+      var view = new Moustagram.views.InfiniteView({ collection: photos });
+      $("#moustagram").html(view.el);
     }
 
   };
   //Run this motha
-  Moustagrammer.run();
+  Moustagrammer.tvMode('batman');
 
 });

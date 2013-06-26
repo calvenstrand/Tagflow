@@ -75,18 +75,44 @@ Moustagram.views.PhotoView = Backbone.View.extend({
   initialize: function () {
 
     //console.log('PhotoView initialized');
+   
   },
 
   render: function () {
-    //console.log(this.model);
-    //console.log('PhotoView rendering');
+     var le = this;
+     var img;
+      
+    
     username = this.model.get('user').username;
     link = this.model.get('link');
-    img = new Image();
-    img.src = this.model.get('images').low_resolution.url;
-    this.$el.append('<div class="instaPost"></div>');
+    
+    this.$el.append('<div style="display:hidden;" class="instaPost"></div>');
+    this.$el.waitForImages(function() {
+    // All descendant images have loaded, now slide up.
+    $(this).fadeIn();  
+    console.log('loaded really?');
+});
+    /*this.$el.children('.instaPost').imagesLoaded().progress(function(instance){
+      console.log('loading');
+      console.log(image);
+      
+    }).done(function(instance){
+       
+       console.log(instance);
+       $(instance.elements).fadeIn();
+      console.log('loaded');
+      
+    });*/
     this.$el.children('.instaPost').append('<span id="instaUser-container"><p class="instaUser"><a href="' + link + '">' + username + '</a></p></span>');
     this.$el.children('.instaPost').append('<a class="imgLink" href="' + link + '"></a>');
+    //this.$el.children('instaPost')
+
+   
+    img = new Image();
+   
+
+    img.src = this.model.get('images').standard_resolution.url;
+    
     this.$el.find('.imgLink').append(img);
 
     return this;
@@ -109,17 +135,14 @@ Moustagram.views.PhotosView = Backbone.View.extend({
       add: true,
       dataType: 'jsonp',
       success: function (collection, response) {
-
         console.log('completed fetch');
-
-        //view.render();
       },
       error: function (collection, response) {
         console.log('fetch fucked up');
       }
     });
 
-    if (MODE == 'tvMode') {
+    
       setInterval(function () {
         leIntervalStarted = true;
         console.log('starting fetch');
@@ -137,7 +160,7 @@ Moustagram.views.PhotosView = Backbone.View.extend({
         });
         //end of interval
       }, 7000);
-    }
+    
 
   },
 
@@ -156,6 +179,15 @@ Moustagram.views.PhotosView = Backbone.View.extend({
   },
   renderSingle: function (photo) {
     view = this;
+
+    /*function preload(arrayOfImages) {
+    $(arrayOfImages).each(function(){
+        $('<img/>')[0].src = this;
+        // Alternatively you could use:
+        // (new Image()).src = this;
+    });
+}   
+  preload([photo.get('images').standard_resolution.url]);*/
     var photoView = new Moustagram.views.PhotoView({
       model: photo
     });
@@ -163,6 +195,7 @@ Moustagram.views.PhotosView = Backbone.View.extend({
       view.$el.append(photoView.render().el);
     } else {
       view.$el.prepend(photoView.render().el);
+
     }
     return this;
   }
@@ -312,6 +345,6 @@ jQuery(function ($) {
 
   };
   //Run this motha
-  Moustagrammer.infiniteMode('batman');
+  Moustagrammer.tvMode('batman');
 
 });

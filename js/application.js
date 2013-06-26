@@ -75,7 +75,7 @@ Moustagram.views.PhotoView = Backbone.View.extend({
   initialize: function () {
 
     //console.log('PhotoView initialized');
-   
+   this.$el.hide();
   },
 
   render: function () {
@@ -87,33 +87,32 @@ Moustagram.views.PhotoView = Backbone.View.extend({
     link = this.model.get('link');
     
     this.$el.append('<div style="display:hidden;" class="instaPost"></div>');
-    this.$el.waitForImages(function() {
-    // All descendant images have loaded, now slide up.
-    $(this).fadeIn();  
-    console.log('loaded really?');
-});
-    /*this.$el.children('.instaPost').imagesLoaded().progress(function(instance){
-      console.log('loading');
-      console.log(image);
-      
-    }).done(function(instance){
-       
-       console.log(instance);
-       $(instance.elements).fadeIn();
-      console.log('loaded');
-      
-    });*/
     this.$el.children('.instaPost').append('<span id="instaUser-container"><p class="instaUser"><a href="' + link + '">' + username + '</a></p></span>');
     this.$el.children('.instaPost').append('<a class="imgLink" href="' + link + '"></a>');
-    //this.$el.children('instaPost')
-
-   
     img = new Image();
    
 
-    img.src = this.model.get('images').standard_resolution.url;
     
-    this.$el.find('.imgLink').append(img);
+    this.$el.find('.instaPost').waitForImages(function() {
+    // All descendant images have loaded, now slide up.
+    $(img).load( function(){ 
+                    //once image is loaded add it to the a and remove the preloading 
+                   le.$el.find('.imgLink').append( img ); 
+                    // do other stuff 
+                     
+                    le.$el.show();
+
+                }); 
+   
+
+    $(this).fadeIn();
+    
+    
+    
+      
+});
+    img.src = this.model.get('images').low_resolution.url;
+       
 
     return this;
   }
@@ -180,14 +179,6 @@ Moustagram.views.PhotosView = Backbone.View.extend({
   renderSingle: function (photo) {
     view = this;
 
-    /*function preload(arrayOfImages) {
-    $(arrayOfImages).each(function(){
-        $('<img/>')[0].src = this;
-        // Alternatively you could use:
-        // (new Image()).src = this;
-    });
-}   
-  preload([photo.get('images').standard_resolution.url]);*/
     var photoView = new Moustagram.views.PhotoView({
       model: photo
     });
@@ -223,11 +214,17 @@ Moustagram.views.InfiniteView = Backbone.View.extend({
 
         console.log('completed fetch');
         //view.render();
-
-        $('#choosenHash').click(function () {
-          view.gettit(response);
-
-        });
+        $(window).scroll(function() {
+  // Modify to adjust trigger point. You may want to add content
+  // a little before the end of the page is reached. You may also want
+  // to make sure you can't retrigger the end of page condition while
+  // content is still loading.
+  if ($(window).scrollTop() == $(document).height() - $(window).height()) {
+    console.log('lescroll');
+    view.gettit(response);
+  }
+});
+        
 
       },
       error: function (collection, response) {
@@ -263,11 +260,18 @@ Moustagram.views.InfiniteView = Backbone.View.extend({
       success: function (collection, response) {
         console.log('completed fetch');
         var resp = response;
-        $('#choosenHash').unbind('click');
-        $('#choosenHash').click(function () {
-          view.gettit(resp);
-
-        });
+        $(window).unbind('scroll');
+       
+        $(window).scroll(function() {
+  // Modify to adjust trigger point. You may want to add content
+  // a little before the end of the page is reached. You may also want
+  // to make sure you can't retrigger the end of page condition while
+  // content is still loading.
+  if ($(window).scrollTop() == $(document).height() - $(window).height()) {
+    console.log('lescroll');
+    view.gettit(response);
+  }
+});
         //view.render();
       },
       error: function (collection, response) {
@@ -345,6 +349,6 @@ jQuery(function ($) {
 
   };
   //Run this motha
-  Moustagrammer.tvMode('batman');
+  Moustagrammer.infiniteMode('batman');
 
 });

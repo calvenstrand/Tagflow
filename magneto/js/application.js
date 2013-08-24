@@ -118,7 +118,7 @@ Moustagram.views.PhotoView = Backbone.View.extend({
 
     this.$el.append('<div style="display:hidden;" class="instaPost"></div>');
     this.$el.children('.instaPost').append('<span id="instaUser-container"><p class="instaUser"><a href="' + link + '">' + username + '</a></p></span>');
-    this.$el.children('.instaPost').append('<a class="imgLink" href="' + link + '"></a>');
+    this.$el.children('.instaPost').append('<a class="imgLink fancybox" rel="gallery1" href="' + link + '"></a>');
     img = new Image();
 
     this.$el.find('.instaPost').waitForImages(function() {

@@ -1,10 +1,23 @@
 <link rel="stylesheet" href="http://eyefly.stockholmsweden.se/skin/frontend/eyefly/default/insta/css/main.css">
+<link rel="stylesheet" href="http://eyefly.stockholmsweden.se/skin/frontend/eyefly/default/insta/css/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
 
+
+<div id="choosenHash">#Eyefly</div>
 <ul id="moustagram" class="instaContainer"></ul>
+<div id="loader" class="loader"><div><img src="http://eyefly.stockholmsweden.se/skin/frontend/eyefly/default/insta/img/reload.png" alt="load more pictures" /></div></div>
 
-<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-<script src="http://eyefly.stockholmsweden.se/skin/frontend/eyefly/default/insta/js/libs/underscore-min.js"></script>
-<script src="http://eyefly.stockholmsweden.se/skin/frontend/eyefly/default/insta/js/libs/backbone-min.js"></script>
-<script src="http://eyefly.stockholmsweden.se/skin/frontend/eyefly/default/insta/js/libs/helper.js"></script>
-<script src="http://eyefly.stockholmsweden.se/skin/frontend/eyefly/default/insta/js/libs/wfi.js"></script>
-<script src="http://eyefly.stockholmsweden.se/skin/frontend/eyefly/default/insta/js/application.js"></script>
+<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script type="text/javascript" src="http://eyefly.stockholmsweden.se/skin/frontend/eyefly/default/insta/js/libs/underscore-min.js"></script>
+<script type="text/javascript" src="http://eyefly.stockholmsweden.se/skin/frontend/eyefly/default/insta/js/libs/backbone-min.js"></script>
+<script type="text/javascript" src="http://eyefly.stockholmsweden.se/skin/frontend/eyefly/default/insta/js/libs/helper.js"></script>
+<script type="text/javascript" src="http://eyefly.stockholmsweden.se/skin/frontend/eyefly/default/insta/js/libs/wfi.js"></script>
+<script type="text/javascript" src="http://eyefly.stockholmsweden.se/skin/frontend/eyefly/default/insta/js/application.js"></script>
+<script type="text/javascript" src="http://eyefly.stockholmsweden.se/skin/frontend/eyefly/default/insta/js/libs/jquery.fancybox.js"></script>
+<script type="text/javascript">
+	$(document).ready(function() {
+		$(".fancybox").fancybox({
+			openEffect	: 'none',
+			closeEffect	: 'none'
+		});
+	});
+</script>

@@ -17,33 +17,33 @@ textarea {  resize: vertical; }
     width: 100%;
     top:0;
     background-color: rgba(250, 250, 250, 0.95);
-	position: fixed;
+    position: fixed;
     z-index: 10;
 }
 #choosenHash {
-	text-align:center;
-	font-size: 40px;
-	margin:5px;
-	display:block;	
-	font-family: 'Alef', sans-serif;
-	cursor:default;
+    text-align:center;
+    font-size: 40px;
+    margin:5px;
+    display:block;  
+    font-family: 'Alef', sans-serif;
+    cursor:default;
     color: rgb(30, 30, 30);
 }
 #l-logo { 
-	float:left;
-	display:block;
-	margin:10px 10px 10px 20px;
-	width: 300px;
-	height:55px;
-	background-repeat:no-repeat;
+    float:left;
+    display:block;
+    margin:10px 10px 10px 20px;
+    width: 300px;
+    height:55px;
+    background-repeat:no-repeat;
 }
 #r-logo {
-	float:right;
-	display:block;
-	margin:10px 20px 10px 10px;
-	width: 300px;
-	height:55px;
-	background-repeat:no-repeat;
+    float:right;
+    display:block;
+    margin:10px 20px 10px 10px;
+    width: 300px;
+    height:55px;
+    background-repeat:no-repeat;
 }
 
 /* Instagram =============== */
@@ -55,6 +55,7 @@ textarea {  resize: vertical; }
     width: 100%;
     float:left;
     top:70px;
+    margin-bottom:100px;
 }
 #instafeed li {
     position: relative;
@@ -66,7 +67,7 @@ textarea {  resize: vertical; }
 }
 #instafeed .instaPost {
     margin-bottom:1px;
-	margin-right:1px;
+    margin-right:1px;
 }
 #instaUser-container {
     width: 100%;
@@ -113,6 +114,19 @@ textarea {  resize: vertical; }
     align-items: center;
     text-align: center;
     opacity: 0;
+}
+.loader {
+    width: 100%;
+    height: 100px;
+    background: rgba(255,255,255, 0.8);
+    bottom: 0;
+    z-index: 9999;
+}
+.loader img {
+    max-height: 100%;
+    width: 100px;
+    display: block;
+    margin: 0 auto;
 }
 @media screen and (max-width: 1190px) {
     #instafeed li {
@@ -166,7 +180,7 @@ textarea {  resize: vertical; }
 
 /* iPads (landscape) ----------- */
 @media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : landscape) {
-	#instafeed li {
+    #instafeed li {
         width: 25%; /* Fallback */
         width: -webkit-calc(100% / 4);
         width: calc(100% / 4);
@@ -175,7 +189,7 @@ textarea {  resize: vertical; }
 
 /* iPads (portrait) ----------- */
 @media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : portrait) {
-	#instafeed li {
+    #instafeed li {
         width: 33.3333333%; /* Fallback */
         width: -webkit-calc(100% / 3);
         width: calc(100% / 3);
@@ -190,7 +204,7 @@ textarea {  resize: vertical; }
     float: right;
     padding: 10px;
     border-left: 2px solid #d4d4d4;
-	display: none;
+    display: none;
 }
 .twitterPost {
     width: 90%;
@@ -226,16 +240,16 @@ textarea {  resize: vertical; }
     float: left;
 }
 #twitter-widget-0 {
-	width:100% !important;
-	height:1000px !important;
+    width:100% !important;
+    height:1000px !important;
 }
 .timeline .stream {
-	height:900px !important;
-	overflow: visible !important;
+    height:900px !important;
+    overflow: visible !important;
 }
 
 .timeline-footer {
-	display:hidden !important;
+    display:hidden !important;
 }
  
 /*====  Helper classes =========================================== */
@@ -255,7 +269,7 @@ textarea {  resize: vertical; }
     * { background: transparent !important; color: #000 !important; box-shadow: none !important; text-shadow: none !important; }
     a, a:visited { text-decoration: underline; }
     a[href]:after { content: " (" attr(href) ")"; }
-	abbr[title]:after { content: " (" attr(title) ")"; }
+    abbr[title]:after { content: " (" attr(title) ")"; }
     .ir a:after, a[href^="javascript:"]:after, a[href^="#"]:after { content: ""; }
     pre, blockquote { border: 1px solid #999; page-break-inside: avoid; }
     thead { display: table-header-group; }

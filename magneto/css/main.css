@@ -1,0 +1,107 @@
+/* Container settings ====== */
+.col-main {
+    width: 940px !important;
+}
+.std {}
+.std ul {
+    padding: 0 !important;
+}
+.std ul, .std ol, .std dl, .std p, .std address, .std blockquote, .std table {
+    margin-bottom: 13px !important;
+}
+#home-bottom-links {
+    padding-top: 150px !important;
+}
+
+/* Instagram =============== */
+#choosenHash {
+    text-align:center;
+    font-size: 40px;
+    margin:5px;
+    display:block;  
+    cursor:default;
+    color: rgb(30, 30, 30);
+    text-transform: uppercase;
+}
+.instaContainer {
+    margin: -4px 0 200px 0;
+    padding: 0;
+    list-style: none !important;
+    position: relative;
+    width: 100%;
+    float:left;
+    top:70px;
+}
+#instafeed li {
+    position: relative;
+    float: left;
+    overflow: hidden;
+    width: 20%; /* Fallback */
+    width: -webkit-calc(100% / 5);
+    width: calc(100% / 5);
+}
+#instafeed .instaPost {
+    margin-bottom:1px;
+	margin-right:1px;
+}
+#instaUser-container {
+    width: 100%;
+    z-index: 1;
+    position: absolute;
+    bottom: -12px;
+    left: 0px;
+}
+.instaUser { 
+    display: block;
+    padding: 0.5em;
+    background: none repeat scroll 0% 0% rgba(0, 0, 0, 0.5);
+    font-size: 10px;
+    text-transform: uppercase;
+    line-height: 1.2em;
+    color: rgb(255, 255, 255);
+    margin-right: 1px;
+}
+#instafeed li a,
+#instafeed li a img {
+    display: block;
+    width: 100%;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+}
+#instafeed li a img {
+    max-width: 100%;
+}
+#instafeed li a div {
+    position: absolute;
+    left: 20px;
+    top: 20px;
+    right: 20px;
+    bottom: 20px;
+    background: rgba(71,163,218,0.2);
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: flex;
+    -webkit-align-items: center;
+    -moz-align-items: center;
+    -ms-align-items: center;
+    align-items: center;
+    text-align: center;
+    opacity: 0;
+}
+.loader {
+    width: 100%;
+    height: 100px;
+    background: rgba(255,255,255, 0.8);
+    bottom: 0;
+    z-index: 9999;
+}
+.loader img {
+    max-height: 100%;
+    width: 100px;
+    display: block;
+    margin: 0 auto;
+    padding-top: 60px;
+}

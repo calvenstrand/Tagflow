@@ -316,7 +316,7 @@ jQuery(function ($) {
  
   //Run this motha
 var loda = Moustagram;
-loda.config.tag='batman';
+loda.config.tag='eyefly';
 loda.config.mode('infiniteMode')
   
 }

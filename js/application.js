@@ -15,7 +15,7 @@ var MODE;
 //Use the config to set important values
 
 Moustagram.config = {
-  clientId: "bf5093520bb54d3cac22e936e98a3804",
+  clientId: "PUT YOUR INSTAGRAM CLIENT ID HERE",
   feedUrl: "https://api.instagram.com/v1/users/self/media/recent?access_token=",
   tag: 'batmanz',
   mode: function(string){

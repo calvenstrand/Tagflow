@@ -22,7 +22,7 @@ function instaGetter(params){
 			target: name_of_tag,
 			get: 'tagged',
 			tagName: name_of_tag,
-			clientId: 'bf5093520bb54d3cac22e936e98a3804',
+			clientId: 'PUT YOUR API CLIENT ID HERE',
 			limit: 60,
 			template: '<li><div class="instaPost"><span id="instaUser-container"><p class="instaUser"><a href="{{link}}">{{model.user.username}}</a></p></span><a href="{{link}}"><img src="{{image}}" alt="instaimg"></a></div></li>',
 			success: function(data){
